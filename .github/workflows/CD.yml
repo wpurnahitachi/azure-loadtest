@@ -30,10 +30,16 @@ jobs:
         continue-on-error: false
         with:
           creds: ${{ secrets.AZURE_SP }}
-
+      # Run Azure Load Test
       - name: 'Azure Load Testing'
         uses: azure/load-testing@v1
         with:
           loadTestConfigFile: 'config.yaml'
           loadTestResource: 'load-test-demo'
           resourceGroup: 'rg-load-test'
+          loadTestRunDescription: 'Run from Github CI/CD Workflow'
+      # Export the Load Test Results
+      - uses: actions/upload-artifact@v2
+        with:
+          name: loadTestResults
+          path: ${{ github.workspace }}/loadTest
