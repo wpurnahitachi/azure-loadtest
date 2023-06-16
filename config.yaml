@@ -1,0 +1,13 @@
+displayName: LoadTestRunningLog
+testPlan: HTTP Request.jmx
+description: Test the Running Log Logic App
+engineInstances: 1
+testId: 47a49c5b-52d4-4465-9e49-3e7de95fc2a1
+splitAllCSVs: False
+configurationFiles:
+- RunningData.csv
+failureCriteria:
+- p90(response_time_ms) > 10
+autoStop:
+  errorPercentage: 90
+  timeWindow: 60
