@@ -50,6 +50,6 @@ jobs:
             subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
             template: ./Bicep-Template/main-deploy.bicep
             parameters: ./Bicep-Template/parameters.json servicePrincipalId=${{ secrets.SERVICE_PRINCIPAL_ID }}
-            additionalArguments: "--what-if --rollback-on-error"
+            additionalArguments: "--what-if"
             region: eastus2
 
