@@ -10,12 +10,12 @@ jobs:
     build:
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
-  
+
       # Steps represent a sequence of tasks that will be executed as part of the job
       steps:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         - uses: actions/checkout@v3
-              
+
         # Builds the Bicep template
         - name: bicep-build-output
           uses: Azure/bicep-build-action@v1.0.1
@@ -28,4 +28,31 @@ jobs:
           with:
             path: ./main-deploy.json
 
-            
+    deploy:
+        runs-on: ubuntu-latest
+        environment : {
+              name: 'development'
+        }
+        needs: [build]
+        steps:
+        - uses: actions/checkout@v3
+
+        - name: Azure Login
+          uses: Azure/login@v1.4.3
+          with:
+            creds: ${{ secrets.GITHUB_TOKEN }}
+        
+        - name: what-if deploy
+          uses: azure/arm-deploy@v1
+          
+          with:
+            subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+            template: ./Bicep-Template/main-deploy.bicep
+            parameters: ./Bicep-Template/parameters.json servicePrincipalId=${{ secrets.SERVICE_PRINCIPAL_ID }}
+            additionalArguments: "--what-if --rollback-on-error"
+            outputFilePath: ./what-if-output.json
+        
+        - name: Upload a Deploy Artifact
+          uses: actions/upload-artifact@v3.1.1
+          with:
+            path: ./what-if-output.json
