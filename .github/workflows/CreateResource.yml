@@ -51,4 +51,5 @@ jobs:
             template: ./Bicep-Template/main-deploy.bicep
             parameters: ./Bicep-Template/parameters.json servicePrincipalId=${{ secrets.SERVICE_PRINCIPAL_ID }}
             additionalArguments: "--what-if --rollback-on-error"
+            region: eastus2
 
