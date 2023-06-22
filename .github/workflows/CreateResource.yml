@@ -40,7 +40,7 @@ jobs:
         - name: Azure Login
           uses: Azure/login@v1.4.3
           with:
-            creds: ${{ secrets.GITHUB_TOKEN }}
+            creds: ${{ secrets.AZURE_SP }}
         
         - name: what-if deploy
           uses: azure/arm-deploy@v1
