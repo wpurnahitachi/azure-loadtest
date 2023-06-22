@@ -46,13 +46,9 @@ jobs:
           uses: azure/arm-deploy@v1
           
           with:
+            scope: subscription
             subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
             template: ./Bicep-Template/main-deploy.bicep
             parameters: ./Bicep-Template/parameters.json servicePrincipalId=${{ secrets.SERVICE_PRINCIPAL_ID }}
             additionalArguments: "--what-if --rollback-on-error"
-            outputFilePath: ./what-if-output.json
-        
-        - name: Upload a Deploy Artifact
-          uses: actions/upload-artifact@v3.1.1
-          with:
-            path: ./what-if-output.json
+
