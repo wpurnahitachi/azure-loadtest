@@ -52,4 +52,5 @@ jobs:
             parameters: ./Bicep-Template/parameters.json servicePrincipalId=${{ secrets.SERVICE_PRINCIPAL_ID }}
             additionalArguments: "--what-if"
             region: eastus2
+            modulePath: ./Bicep-Template/resources.bicep
 
