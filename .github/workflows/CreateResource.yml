@@ -1,0 +1,31 @@
+name: Bicep_Resource_Build
+
+on: 
+    workflow_dispatch:
+env:
+    bicepfilePath: ./Bicep-Template/main-deploy.bicep
+
+jobs:
+    # This workflow contains a single job called "build"
+    build:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+  
+      # Steps represent a sequence of tasks that will be executed as part of the job
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v3
+              
+        # Builds the Bicep template
+        - name: bicep-build-output
+          uses: Azure/bicep-build-action@v1.0.1
+          with:
+              bicepFilePath: ${{  env.bicepfilePath }}              
+              outputFilePath: ./main-deploy.json
+        
+        - name: Upload a Build Artifact
+          uses: actions/upload-artifact@v3.1.1
+          with:
+            path: ./main-deploy.json
+
+            
