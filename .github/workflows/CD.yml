@@ -45,11 +45,11 @@ jobs:
             [
                 {
                 "name": "username",
-                "value": "${{ secrets.USER_NAME }}",
+                "value": "${{ vars.HOST_NAME }}",
                 },
                 {
                 "name": "password",
-                "value": "${{ secrets.PASSWORD }}",
+                "value": "${{ vars.HOST_NAME }}",
                 }
             ]
           env: |
