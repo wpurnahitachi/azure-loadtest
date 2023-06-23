@@ -48,6 +48,10 @@
               <stringProp name="Header.name">Content-Type</stringProp>
               <stringProp name="Header.value">application/json</stringProp>
             </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Auth-Token</stringProp>
+              <stringProp name="Header.value">${__GetSecret(username)}-${__GetSecret(password)}</stringProp>
+            </elementProp>
           </collectionProp>
         </HeaderManager>
         <hashTree/>
@@ -69,11 +73,11 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">prod-62.eastus2.logic.azure.com</stringProp>
+          <stringProp name="HTTPSampler.domain">${__BeanShell( System.getenv(&quot;HostServerName&quot;) )}</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">workflows/67e7aa78fe7747d08aea2f3a3378f0da/triggers/manual/paths/invoke/session?api-version=2016-10-01&amp;sp=%2Ftriggers%2Fmanual%2Frun&amp;sv=1.0&amp;sig=8WQXuecfz3FoIErLzEy1UpsEvI3Xw3F_Z6K0cMz3wA0</stringProp>
+          <stringProp name="HTTPSampler.path">${__BeanShell( System.getenv(&quot;Path&quot;) )}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>

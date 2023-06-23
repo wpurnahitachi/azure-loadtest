@@ -9,9 +9,6 @@ param secretsPermissions array = [
   'all'
 ]
 
-// @description('Location for all resources')
-// param location string = resourceGroup().location
-
 resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {  
   location: location
   name: keyVaultName
