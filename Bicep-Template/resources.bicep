@@ -42,7 +42,7 @@ resource loadTest 'Microsoft.LoadTestService/loadTests@2022-12-01' = {
 }
 
 resource keyVaultAccessPolicy 'Microsoft.KeyVault/vaults/accessPolicies@2022-07-01' = {
-  name: keyVaultName
+  name: 'add'
   parent: keyVault
   properties: {
     accessPolicies: [
