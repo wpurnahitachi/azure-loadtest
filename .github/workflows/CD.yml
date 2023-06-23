@@ -45,11 +45,11 @@ jobs:
             [
             {
               "name" : "HostServerName",
-              "value" :"${{ vars.HOST_NAME }}",
+              "value" :"${{ vars.HOST_NAME }}"
             },
             {
               "name": "Path",
-              "value": "${{ vars.HOST_PATH  }}",
+              "value": "${{ vars.HOST_PATH  }}"
             } 
             ]
 
