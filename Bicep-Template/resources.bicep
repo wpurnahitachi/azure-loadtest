@@ -47,13 +47,13 @@ resource keyVaultAccessPolicy 'Microsoft.KeyVault/vaults/accessPolicies@2022-07-
   properties: {
     accessPolicies: [
       {
-        objectId: loadTest.id
+        objectId: loadTest.identity.principalId
         permissions: {
           secrets: [
             'all'
           ]
         }
-        tenantId: subscription().tenantId
+        tenantId: loadTest.identity.tenantId
       }
     ]
   }
