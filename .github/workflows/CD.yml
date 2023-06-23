@@ -57,10 +57,6 @@ jobs:
               {
                 "name": "username",
                 "value": "${{ secrets.USER_NAME }}"
-                },
-                {
-                "name": "password",
-                "value": "${{ secrets.PASSWORD }}"
                 }
             ]
 
