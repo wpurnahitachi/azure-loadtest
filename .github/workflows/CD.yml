@@ -43,26 +43,16 @@ jobs:
           loadTestRunDescription: 'Run from Github CI/CD Workflow'
           env: |
             [
-              {
-              "name": "HostServerName",
-              "value": "${{ vars.HOST_NAME }}",
-              },
-              {
+             {
+              "name" : "HostServerName",
+              "value" :"${{ vars.HOST_NAME }}",
+             },
+             {
               "name": "Path",
-              "value":  "${{ vars.HOST_PATH  }}",
-              }
+              "value": "${{ vars.HOST_PATH  }}",
+             } 
             ]
-          secrets: |
-            [
-              {
-                "name": "app_client_id",
-                "value": "clientId"
-              },
-              {
-                "name": "app_tenant_id",
-                "value": "password"
-              }
-            ]
+
       # Export the Load Test Results
       - uses: actions/upload-artifact@v2
         with:
