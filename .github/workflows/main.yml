@@ -1,0 +1,13 @@
+name: Main-Workflow
+
+on: 
+    workflow_dispatch
+
+jobs:
+
+    deploy-resources:
+        uses: ./.github/workflows/CreateResource.yml
+    
+    deploy-run-load-test:
+        uses: ./.github/workflows/CD.yml
+        

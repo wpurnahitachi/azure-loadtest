@@ -2,6 +2,8 @@ name: Bicep_Resource_Build
 
 on: 
     workflow_dispatch:
+    
+    workflow_call:
 env:
     bicepfilePath: ./Bicep-Template/main-deploy.bicep
 
