@@ -9,7 +9,7 @@
         "value": "eastus2"
       },
       "keyVaultName": {
-        "value": "kv-load-test04"
+        "value": "kv-load-test03"
       },
       "loadTestName": {
         "value" : "load-test-demo"

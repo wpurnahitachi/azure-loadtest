@@ -16,10 +16,10 @@ resource resourceGrp 'Microsoft.Resources/resourceGroups@2022-09-01' = {
 }
 
 module keyVault 'resources.bicep' = {
-  name: 'resourcesModule'
+  name: 'resourcesModule${ uniqueString(subscription().id )}'
   scope: resourceGrp
   params: {
-    keyVaultName: keyVaultName
+    keyVaultName: keyVaultName 
     location: resourceGrp.location
     secretsPermissions: ['all']
     objectId: servicePrincipalId
