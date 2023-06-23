@@ -39,18 +39,18 @@ jobs:
         with:
           loadTestConfigFile: 'config.yaml'
           loadTestResource: 'load-test-demo'
-          resourceGroup: 'rg-load-test'
           loadTestRunDescription: 'Run from Github CI/CD Workflow'
+          resourceGroup: 'rg-load-test'
           env: |
             [
-             {
+            {
               "name" : "HostServerName",
               "value" :"${{ vars.HOST_NAME }}",
-             },
-             {
+            },
+            {
               "name": "Path",
               "value": "${{ vars.HOST_PATH  }}",
-             } 
+            } 
             ]
 
       # Export the Load Test Results
