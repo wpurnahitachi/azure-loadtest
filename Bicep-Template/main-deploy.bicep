@@ -6,7 +6,7 @@ param resourceGroupLocation string
 param keyVaultName string
 param servicePrincipalId string
 param loadTestName string
-
+param utcValue string = string(dateTimeToEpoch(utcNow()))
 
 resource resourceGrp 'Microsoft.Resources/resourceGroups@2022-09-01' = {
   location: resourceGroupLocation
@@ -16,7 +16,7 @@ resource resourceGrp 'Microsoft.Resources/resourceGroups@2022-09-01' = {
 }
 
 module keyVault 'resources.bicep' = {
-  name: 'resourcesModule-${ uniqueString(subscription().id )}'
+  name: 'resourcesModule-${ utcValue }'
   scope: resourceGrp
   params: {
     keyVaultName: keyVaultName 
