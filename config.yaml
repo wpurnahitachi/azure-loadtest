@@ -1,7 +1,7 @@
 displayName: LoadTest-CICD-Pipeline
 testPlan: HTTP Request.jmx
 description: Test the Running Log Logic App
-engineInstances: 1
+engineInstances: 2
 testId: 8f74f731-3634-433e-8581-3219fc2ad4ef
 splitAllCSVs: True
 configurationFiles:
