@@ -9,6 +9,9 @@ configurationFiles:
 failureCriteria:
 - p90(response_time_ms) > 300
 - percentage(error) > 50
+secrets:
+- name: password
+  value: https://kv-load-test03.vault.azure.net/secrets/password
 autoStop:
   errorPercentage: 90
   timeWindow: 60
