@@ -50,7 +50,6 @@ jobs:
             subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
             template: ./Bicep-Template/main-deploy.bicep
             parameters: ./Bicep-Template/parameters.json servicePrincipalId=${{ secrets.SERVICE_PRINCIPAL_ID }}
-            additionalArguments: "--what-if"
+            # additionalArguments: "--what-if"
             region: eastus2
-            modulePath: ./Bicep-Template/resources.bicep
 
