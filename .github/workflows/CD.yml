@@ -43,14 +43,25 @@ jobs:
           resourceGroup: 'rg-load-test'
           env: |
             [
-            {
-              "name" : "HostServerName",
-              "value" :"${{ vars.HOST_NAME }}"
-            },
-            {
-              "name": "Path",
-              "value": "${{ vars.HOST_PATH  }}"
-            } 
+              {
+                "name" : "HostServerName",
+                "value" :"${{ vars.HOST_NAME }}"
+              },
+              {
+                "name": "Path",
+                "value": "${{ vars.HOST_PATH  }}"
+              } 
+            ]
+          secrets: |
+            [
+              {
+                "name": "username",
+                "value": "${{ secrets.USER_NAME }}"
+                },
+                {
+                "name": "password",
+                "value": "${{ secrets.PASSWORD }}"
+                }
             ]
 
       # Export the Load Test Results
