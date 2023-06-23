@@ -41,17 +41,6 @@ jobs:
           loadTestResource: 'load-test-demo'
           resourceGroup: 'rg-load-test'
           loadTestRunDescription: 'Run from Github CI/CD Workflow'
-          secrets: |
-            [
-              {
-              "name": "username",
-              "value": "username",
-              },
-              {
-              "name": "password",
-              "value": "password",
-              }
-            ]
           env: |
             [
               {
@@ -61,6 +50,17 @@ jobs:
               {
               "name": "Path",
               "value":  "${{ vars.HOST_PATH  }}",
+              }
+            ]
+          secrets: |
+            [
+              {
+                "name": "app_client_id",
+                "value": "clientId"
+              },
+              {
+                "name": "app_tenant_id",
+                "value": "password"
               }
             ]
       # Export the Load Test Results
