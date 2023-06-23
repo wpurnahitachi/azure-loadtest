@@ -7,7 +7,9 @@ jobs:
 
     deploy-resources:
         uses: ./.github/workflows/CreateResource.yml
+        secrets: inherit
     
     deploy-run-load-test:
         uses: ./.github/workflows/CD.yml
+        secrets: inherit
         
