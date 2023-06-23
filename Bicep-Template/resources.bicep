@@ -40,3 +40,20 @@ resource loadTest 'Microsoft.LoadTestService/loadTests@2022-12-01' = {
     type: 'SystemAssigned'
   }
 }
+
+resource keyVaultAccessPolicy 'Microsoft.KeyVault/vaults/accessPolicies@2022-07-01' = {
+  name: keyVault.name
+  properties: {
+    accessPolicies: [
+      {
+        objectId: loadTest.id
+        permissions: {
+          secrets: [
+            'all'
+          ]
+        }
+        tenantId: subscription().tenantId
+      }
+    ]
+  }
+}
