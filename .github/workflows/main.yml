@@ -1,7 +1,13 @@
 name: Main-Workflow
 
-on: 
-    workflow_dispatch
+on:
+      # Triggers the workflow on push or pull request events but only for the "main" branch
+    push:
+        branches: [ "main" ]
+    pull_request:
+        branches: [ "main" ]
+
+    workflow_dispatch:
 
 jobs:
 
@@ -11,6 +17,6 @@ jobs:
     
     deploy-run-load-test:
         needs: deploy-resources
-        uses: ./.github/workflows/CD.yml
+        uses: ./.github/workflows/LoadTest.yml
         secrets: inherit
         
