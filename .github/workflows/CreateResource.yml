@@ -5,7 +5,7 @@ on:
     
     workflow_call:
 env:
-    bicepfilePath: ./Bicep-Template/main-deploy.bicep
+    bicepfilePath: ./bicep-template/main-deploy.bicep
 
 jobs:
     # This workflow contains a single job called "build"
