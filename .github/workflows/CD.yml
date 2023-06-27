@@ -39,7 +39,7 @@ jobs:
       - name: 'Azure Load Testing'
         uses: azure/load-testing@v1
         with:
-          loadTestConfigFile: 'config.yaml'
+          loadTestConfigFile: './test-script/config.yaml'
           loadTestResource: 'load-test-demo'
           loadTestRunDescription: 'Run from Github CI/CD Workflow'
           resourceGroup: 'rg-load-test'

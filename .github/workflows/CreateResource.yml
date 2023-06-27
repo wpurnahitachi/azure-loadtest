@@ -50,8 +50,8 @@ jobs:
           with:
             scope: subscription
             subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-            template: ./Bicep-Template/main-deploy.bicep
-            parameters: ./Bicep-Template/parameters.json servicePrincipalId=${{ secrets.SERVICE_PRINCIPAL_ID }}
+            template: ./bicep-template/main-deploy.bicep
+            parameters: ./bicep-template/parameters.json servicePrincipalId=${{ secrets.SERVICE_PRINCIPAL_ID }}
             # additionalArguments: "--what-if"
             region: eastus2
 
