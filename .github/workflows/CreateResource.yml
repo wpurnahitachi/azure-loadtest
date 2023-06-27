@@ -49,7 +49,7 @@ jobs:
           
           with:
             scope: subscription
-            subscriptionId: ${{ secrets.AZUREPTION }}
+            subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
             template: ./bicep-template/main-deploy.bicep
             parameters: ./bicep-template/parameters.json servicePrincipalId=${{ secrets.SERVICE_PRINCIPAL_ID }}
             # additionalArguments: "--what-if"
