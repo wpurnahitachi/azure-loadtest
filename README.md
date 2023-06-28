@@ -15,6 +15,7 @@ This repository contains files and scripts to create and deploy an Azure Load Te
   - [GitHub Action for Azure Load Testing](#github-action-for-azure-load-testing)
   - [Access GitHub Environment Variables and Secrets in JMeter Script](#access-github-environment-variables-and-secrets-in-jmeter-script)
   - [Access Azure Key Valut Secrets in JMeter Script](#access-azure-key-valut-secrets-in-jmeter-script)
+  - [Screenshots](#screenshots)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -132,6 +133,28 @@ secrets:
   value: https://kv-load-test03.vault.azure.net/secrets/password
 ```
 
+## Screenshots
+
+**List of Load Tests**
+![List of Load Tests](Load_Test_List.png)
+
+**Load Test Runs**
+![Load Tests Runs](Load_Test_Runs.png)
+
+**Load Test Run Results**
+![Load Test Run Result](Load_Test_Run_Result.png)
+
+**Load Test Run Result - Client Side Metrics**
+![Load Test Run Result - Client Side Metrics](Load_Test_Run_Result_ClientSide.png)
+
+**Load Test Run Result - Server Side Metrics**
+![Load Test Run Result - Server Side Metrics](Load_Test_Run_Result_SeverSide.png)
+
+**Add Server Side App Components Step 1**
+![Add Server Side App Components Step 1](Load_Test_Add_Server_Components.png)
+
+**Add Server Side App Components Step 2**
+![Add Server Side App Components Step 2](Load_Test_Add_Server_Components_2.png)
 
 
 ## Contributing
