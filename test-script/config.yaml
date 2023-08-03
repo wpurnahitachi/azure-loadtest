@@ -7,7 +7,7 @@ splitAllCSVs: True
 configurationFiles:
 - RunningData.csv
 failureCriteria:
-- p90(response_time_ms) > 300
+- p90(response_time_ms) > 30
 - percentage(error) > 50
 secrets:
 - name: password
